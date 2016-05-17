@@ -28,8 +28,8 @@ class Board
 	end
 
 	def add_character(location, marker)
-		x = location[1] # 2
-		y = location[0] # 1
+		x = location[1].to_i # 2
+		y = location[0].to_i # 1
 
 		@board[y][x] = marker
 	end
@@ -46,7 +46,6 @@ class Board
 	def horizontal_winner?
 	  @board.each do | i |
       	if (i[0] == i[1]) && (i[1] == i[2]) && (i[0] != "")
-          puts "YOU WON!!!"
         end
       end
 	end
@@ -55,7 +54,6 @@ class Board
       if ((@board[0][0] == @board[1][0]) && (@board[1][0] == @board[2][0]) && (@board[0][0] != "")) ||
          ((@board[0][1] == @board[1][1]) && (@board[1][1] == @board[2][1]) && (@board[0][1] != "")) ||
          ((@board[0][2] == @board[1][2]) && (@board[1][2] == @board[2][2]) && (@board[0][2] != "")) 
-        puts "You Won!!!"
       end
 
     end
@@ -63,7 +61,6 @@ class Board
 	def diagonal_winner?
 	  if ((@board[0][0] == @board[1][1]) && (@board[1][1] == @board[2][2]) && (@board[0][0] != "")) ||
         ((@board[0][2] == @board[1][1]) && (@board[1][1] == @board[2][0]) && (@board[0][2] != ""))
-	    puts "You Won (and I don't need to do this anymore!!! for now ...) !!!"
 	  end	
 	end
 end
