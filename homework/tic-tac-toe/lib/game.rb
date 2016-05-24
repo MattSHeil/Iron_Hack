@@ -3,8 +3,8 @@ require_relative('board')
 class Game
 	def initialize(board)
 		@board = board
-		@Player_1 = "X"
-		@Player_2 = "O"
+		@Player_1 = gets.chomp
+		@Player_2 = gets.chomp
 		@coutner = 0 
 	end
 
