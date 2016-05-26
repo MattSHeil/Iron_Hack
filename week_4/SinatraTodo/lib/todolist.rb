@@ -1,7 +1,8 @@
 class TodoList
-    attr_reader :tasks
+    attr_reader :tasks, :user
 
     def initialize(user)
+        @user = user
     	@tasks = []
     end
 
@@ -21,15 +22,16 @@ class TodoList
     	end
     end
 
-    # def sort_by_created(direction)
-    # 	sorted_tasks = @tasks.sort do | task1, task2 |
+    def sort_by_created(direction)
+        sorted_tasks = @tasks
+            
+            if direction == "ASC"
+                sorted_tasks.sort! { | task1, task2 | task1.id <=> task2.id }
+            elsif direction == "DESC"
+                sorted_tasks.sort! { | task1, task2 | task2.id <=> task1.id }
+            end
+        sorted_tasks
+    end
 
-    # 		if direction == "ASC"
-    # 			task1.created_at <=> task2.created_at
-    # 		elsif direction == "DSC"
-    # 			task2.created_at <=> task1.created_at
-	   #  	end
-   	#  	end
-    # 	sorted_tasks
-    # end
+
 end

@@ -63,17 +63,24 @@ describe "Sinatra Todo" do
 			expect(@task).to eq(nil)
 		end
 
-		# it "Sort tasks by task id in ascending order" do
-		# 	expect(@todo_list.sort_by_created("ASC")).to eq([@task1, @task2])
-		# end
+		it "Sorts list by its id's in ascending order" do
+			expect(@todo_list.sort_by_created("ASC")).to eq([@task1, @task2])	
+		end
 
-		# it "Sort tasks by task id in descending order" do
-		# 	expect(@todo_list.sort_by_created("DSC")).to eq([@task2, @task1])
-		# end
+		it "Sorts list by its id's in descending order" do
+			expect(@todo_list.sort_by_created("DESC")).to eq([@task2, @task1])	
+		end
 
-		# it "Checks for to do list users name" do
-		# 	expect(@todo_list.user).to eq("Josh")
-		# end
+		it "Checks for to do list users name" do
+			expect(@todo_list.user).to eq("Josh")
+		end
+
+
+
+
+
+
+
 
 		# it "Loads our to do list that we saved" do
 		# 	@todo_list.save
