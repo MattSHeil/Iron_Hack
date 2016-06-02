@@ -1,0 +1,19 @@
+<center>
+
+<h1>Welcome to our TodoList </h1>
+
+<ul><% @list.each do | tasks | %>
+	<li>
+	<%= tasks.content %>
+	<% if tasks.complete? == false %>
+		<a href="/completed_task/<%= tasks.id %>">Complete Task</a><br><br>	
+	<% else %> 
+		<p>Has been completed <a href="/delete_task/<%= tasks.id %>">Delete Task</a></p>
+	<% end %>
+	</li>
+	<% end %>
+</ul>
+
+<a href="/new_task">Add New Task</a>
+
+</center>

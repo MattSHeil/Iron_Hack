@@ -33,5 +33,9 @@ class TodoList
         sorted_tasks
     end
 
+    def load_tasks
+        @tasks        
+    end
+
 
 end
