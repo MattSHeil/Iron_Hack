@@ -1,0 +1,121 @@
+/*.row {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+*/
+.matt1 {
+	background: purple;
+	color: white;
+	text-align: center;
+}
+
+.matt2 {
+	background: blue;
+	color: white;
+	text-align: center;
+}
+
+.matt3 {
+	background: green;
+	color: white;
+	text-align: center;
+	float: right;
+}
+
+.background {
+	background: url(../images/background.jpg)no-repeat;
+	background-size: 100%;
+}
+
+.img_size {
+	height: 30px;
+	opacity: 0.7;
+}
+
+.center_me {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.float_r {
+	position: relative;
+	top: 10px;
+	right: -100px
+}
+
+.float_l {
+	float: left;
+}
+
+.log_in{
+	background: #3f56e2;
+	border-style: none;
+}
+
+.sign_up {
+	background: #5db248;
+	border-style: none;
+}
+
+.nav_bar_matt {
+	position: relative;
+	height: 32px;
+	background: rgba(128, 128, 128, 0.4);
+}
+
+.seach_styling {
+	width: 50%;
+}
+
+.buttom_r {
+	float: right;
+}
+
+.clear_button {
+	background: rgba(0, 0, 0, 0.0);
+	border-style: none;
+	color: white;
+	font-weight: bold;
+}
+
+.special_button1 {
+	background: green;
+	color: white;
+	border-style: none;
+}
+
+.special_button2 {
+	background-color: blue;
+	color: white;
+	border-style: none;
+}
+
+.text_style_matt {
+	margin-top: 50px; 
+	color: white;
+	font-size: 20px;
+}
+
+.menu_nav_matt {
+	background-color: grey;
+}
+
+.test_matt {
+	background-color: #e2e4e6;
+	border-radius: 5px;
+	margin-left: 5px;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+}
+
+.single_post {
+	background: white;
+	padding-left: 20px;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+
+}
