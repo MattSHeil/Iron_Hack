@@ -1,0 +1,71 @@
+.box {
+	height: 150px;
+	background: pink;
+	padding: 50px;
+}
+
+.box-2 {
+	height: 100px;
+	background: red;
+	width: 500px;
+	box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.master {
+
+}
+
+.columm {
+	width: 100px;
+	float: left;
+	/*border: solid;*/
+}
+
+.row {
+	height: 100px;
+}
+
+.line1 {
+	width: 600px;
+}
+
+.line2 {
+	width: 1000px;
+}
+
+.line3_hair {
+	width: 300px;
+}
+
+.line4 {
+	width: 400px;
+}
+
+.line4_nose {
+	width: 300px;
+}
+
+.line5 {
+	width: 800px;
+}
+
+
+.red {
+	background: red;
+}
+
+.brown {
+	background: brown;
+}
+
+.beige {
+	background: #ff9966;
+}
+
+.black {
+	background: black;
+}
+
+.blue {
+	background: blue;
+}
