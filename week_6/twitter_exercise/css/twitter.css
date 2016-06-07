@@ -1,0 +1,50 @@
+section {
+	position: relative;
+	padding-top: 50px;
+	height: 250px;
+	width: 300px;
+	background: #e1e3e5;
+}
+
+h2 {
+	font-size: 24px;
+	color: #4A4A4A;
+	margin-top: 0px;
+}
+
+p {
+	color: #9B9B9B;
+	font-size: 16px;
+}
+
+button {
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+	border-width: 1px;
+	box-shadow: none;
+	padding: 10px;
+}
+
+.botton_parent {
+	margin-bottom: 10px;
+}
+
+.good {
+	color: #7FA84E;
+	background: #EBFFD3;
+	border-color: #C3E29E;
+}
+
+.bad {
+	color: #A84E4E;
+	background: #FFD3D3;
+	border-color: #E29E9E;
+}
+
+.white_box {
+	background: white;
+	margin-left: 50px;
+	margin-bottom: 50px;
+	margin-right: 50px;
+}
