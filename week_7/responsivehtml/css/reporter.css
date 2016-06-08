@@ -1,0 +1,38 @@
+body:after {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-weight: bold;
+	font-size: 300%;
+	text-align: center;
+	color: white; 
+}
+
+@media screen and (max-width: 1200px) {
+	body:after {
+		content: "1200px width or greater";
+		background-color: black;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	body:after {
+		content: "1024px width or greater";
+		background-color: grey;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body:after {
+		content: "768x width or greater";
+		background-color: #ccc;
+	}
+}
+
+@media screen and (max-width: 305px) {
+	body:after {
+		content: "Smallest screen possible";
+		background-color: #ddd;
+	}
+}

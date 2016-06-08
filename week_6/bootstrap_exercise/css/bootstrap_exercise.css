@@ -172,3 +172,7 @@ h5 {
 .bluer {
 	background: #0079bf;
 }
+
+.post_hover:hover {
+	background: #eaf0f0;
+}
