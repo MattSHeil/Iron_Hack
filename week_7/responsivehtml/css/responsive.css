@@ -1,15 +1,15 @@
 body {
 	background: #000 url("../images/back1.jpg") no-repeat;
 	background-size: cover;
+	position: relative;
 }
 
 .container {
-	width: 1300px;
-	margin: 0 auto;
+	width: 90%;
 }
 
 .row {
-	margin-left: -20px;
+	margin: 0 auto;
 }
 
 [class*="span"] {
@@ -20,6 +20,8 @@ body {
 
 .span-one-third {
 	width: 300px;
+	margin-bottom: 10px; 
+	text-align: center;
 }
 
 .box1 {
@@ -50,19 +52,11 @@ h2 {
 	body {
 		background-image: url('../images/back4.jpg');
 	}
-
-	.container {
-		width: 900px;
-	}
 }
 
 @media screen and (max-width: 1024px) {
 	body {
 		background-image: url('../images/back3.jpg');
-	}
-
-	.container {
-		width: 786px;
 	}
 }
 
@@ -70,9 +64,5 @@ h2 {
 	body {
 		background-image: url('../images/back2.jpg');
 		background-size: 100%;
-	}
-
-	.container {
-		width: 340px;
 	}
 }
