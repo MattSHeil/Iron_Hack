@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<title>Movie Lover</title>
+</head>
+<body>
+	<header class="navbar ">
+		<div class="navbar_components">
+			<img src="../kratos.png" alt="User Profile Picture" class="user_img">
+			<div class="matt">
+			<a href="">home</a>
+			<a href="">about</a>
+			<a href="" class="special">contact</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="body">
+		<center>	
+			<h1>Welcome To Movie Lovers Trivia</h1>
+			<h2>Search for a movie here!!!</h2>
+			<form action="/movie_picker" method="POST">
+				<input type="text" name="keyword" placeholder="Enter movie here">
+				<br><br>
+				<button type="submit">
+					Search
+				</button>
+				<%= @message %>
+			</form>
+		</center>
+	</div>
+	<br><br><br><br><br>
+	<footer>
+		<div class="footer">
+			<ul class="footer-nav">
+				<li><a href="">Hyperlink</a></li>
+				<li><a href="">Hyperlink</a></li>
+				<li><a href="">Hyperlink</a></li>
+			
+				<li><img class="footerimg" src="../facebook.png"></li>
+				<li><img class="footerimg" src="../twitter.png"></li>
+				<li><img class="footerimg" src="../linkedin.png"></li>
+				<li><img class="footerimg" src="../git.png"></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

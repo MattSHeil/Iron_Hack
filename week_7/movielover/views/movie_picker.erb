@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css">	
+	<title>Pick and Choose</title>
+</head>
+<body>
+	<h1>Which movie was released in <%= @correctyear %></h1>
+
+	<main class="mainmatt">		
+		<% @thechosenones.each  do | movies | %>
+			<% if @correctyear == movies.year %>
+				<img src="<%= movies.poster %>" width="150px" onClick="alert('yay')">
+			<% else %>
+				<img src="<%= movies.poster %>" width="150px" onClick="alert('nay')">
+			<% end %>
+		<% end %>
+	</main>
+
+</body>
+</html>
