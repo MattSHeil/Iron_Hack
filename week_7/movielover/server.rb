@@ -17,6 +17,8 @@ post "/movie_picker" do
 	@keyword = params[:keyword]
 	@movies = MovieSearcher.new(@keyword)
 	@thechosenones = @movies.search
+	@thequestion = @movies.random
+
 
 	if @thechosenones.length <= 2 
 		tryagain = "Try again"
@@ -24,8 +26,10 @@ post "/movie_picker" do
 		redirect "/" 
 	else 
 		@correctmovie = @thechosenones.sample
-		@correctyear = @correctmovie.year
+		
+		@correctanswer = "#{@correctmovie} + #{@thequestion}"
 	end
 
 	erb(:movie_picker)
 end
+
