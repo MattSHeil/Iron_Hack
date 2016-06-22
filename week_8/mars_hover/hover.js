@@ -26,7 +26,12 @@ planetMars[2][2] = 1
 planetMars[3][4] = 1
 
 planetMars[2][1] = 0
-
+planetMars[7][7] = 0
+planetMars[7][8] = 0
+planetMars[8][7] = 0
+planetMars[8][8] = 0
+planetMars[3][4] = 0
+planetMars[1][8] = 0
 
 var roverPosition = mattRover.position
 var roverDirection = mattRover.direction
