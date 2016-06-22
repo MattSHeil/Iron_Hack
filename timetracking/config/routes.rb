@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get '/contact' => 'site#contact'
 
-  get '/' => 'test#pizza'
+  get '/pizza' => 'test#pizza'
 
 end
