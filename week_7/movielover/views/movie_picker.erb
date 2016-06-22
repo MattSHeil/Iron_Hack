@@ -6,17 +6,36 @@
 </head>
 <body>
 	
+	<script type="text/javascript">
+    	var yays = 0;
+    	function onYay() {
+        	alert('Yay')
+        	yays += 1;
+        	document.getElementById("yay").innerHTML = Yays;
+    	};
+
+    	var nays = 0;
+    	function onNay() {
+        	alert('Nay')
+        	nays += 1;
+        	document.getElementById("nay").innerHTML = Nays;
+    	};
+   	</script>
+
+
 	<h1> <%= @the_question %> </h1>
 
 	<h2> <%= @counter_x %> / <%= @counter_y %> </h2> 
+
+	<h2> <p>Yays: <a id="yay">0</a></p> <p>Nays: <a id="nay">0</a></p> </h2>
 
 	<main class="mainmatt">		
 			
 		<% @thechosenones.each  do | movies | %>
 			<% if movies.year == @correctmovie.year%>
-				<img src="<%= movies.poster %>" width="150px" onClick="alert('yay')">
+				<img src="<%= movies.poster %>" width="150px" onClick="onYay()">
 			<% else %>
-				<img src="<%= movies.poster %>" width="150px" onClick="alert('nay')">
+				<img src="<%= movies.poster %>" width="150px" onClick="onNay()">
 			<% end %>
 		<% end %>
 
