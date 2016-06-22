@@ -15,9 +15,4 @@ class MovieSearcher
 		end
 		@ninemovies[0..8]
 	end
-
-	def random
-		@possible_questions = [ ".year", ".director", ".length"]
-		@possible_questions.sample
-	end
 end

@@ -5,12 +5,15 @@
 	<title>Pick and Choose</title>
 </head>
 <body>
-	<h1>Which movie was released in <%= @correcanswer %></h1>
-		
+	
+	<h1> <%= @the_question %> </h1>
+
+	<h2> <%= @counter_x %> / <%= @counter_y %> </h2> 
+
 	<main class="mainmatt">		
 			
 		<% @thechosenones.each  do | movies | %>
-			<% if @correctanswer == " #{movies} + #{@thequestion}"%>
+			<% if movies.year == @correctmovie.year%>
 				<img src="<%= movies.poster %>" width="150px" onClick="alert('yay')">
 			<% else %>
 				<img src="<%= movies.poster %>" width="150px" onClick="alert('nay')">

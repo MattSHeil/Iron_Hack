@@ -1,5 +1,8 @@
-@possible_questions = [ ".year", ".cast_member.first", ".director", ".length"]
-puts @possible_questions.sample
+@possible_questions = [ movie.year, movie.cast_member.first, movie.director, movie.length]
+
+@the_question = @possible_questions.sample
+
+puts @the_question
 
 
 
