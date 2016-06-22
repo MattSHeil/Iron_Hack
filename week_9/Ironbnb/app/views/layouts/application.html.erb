@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ironbnb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar">
+	<img src="airbnb_logo.png" alt="Iron BnB logo">
+	<%= link_to 'home', home_path %>
+	<%= link_to 'become a host', become_a_host_path %>
+	<%= link_to 'help', help_path %>
+	<%= link_to 'log in', log_in_path %>
+	<%= link_to 'sign up', sign_up_path %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
