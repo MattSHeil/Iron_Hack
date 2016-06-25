@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   get '/pizza' => 'test#pizza'
 
+  get '/projects' => 'projects#index'
+
 end
