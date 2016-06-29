@@ -23,7 +23,6 @@ class ProjectsController < ApplicationController
 		unless @project
 			render 'no_project_found'
 		end
-
 	end
 
 end

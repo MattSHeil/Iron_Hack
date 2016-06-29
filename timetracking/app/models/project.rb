@@ -14,6 +14,8 @@ class Project < ActiveRecord::Base
 
 	# puts p
 
+	has_many :time_entries
+
 	def self.clean_old
 		where( "creatted_at < ?", 1.week.ago).destroy_all
 
@@ -28,4 +30,15 @@ class Project < ActiveRecord::Base
 		limit(limit).order(created_at: :desc)
 	end
 
+	def total_hours_month(month, year)
+		date = Time.new(year, month)
+
+		entries_in_month = time_entries.where(
+			date: date..date.end_of_month
+		)
+
+		hours = entries_in_month.sum { | e | e.hours }
+		minutes = entries_in_month.sum { | e | e.minutes }
+		(minutes / 60) + hours
+	end
 end

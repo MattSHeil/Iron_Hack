@@ -9,12 +9,13 @@
 <body>
 
 <div class="navbar">
-	<img src="airbnb_logo.png" alt="Iron BnB logo">
-	<%= link_to 'home', home_path %>
-	<%= link_to 'become a host', become_a_host_path %>
-	<%= link_to 'help', help_path %>
-	<%= link_to 'log in', log_in_path %>
-	<%= link_to 'sign up', sign_up_path %>
+	<%= image_tag("airbnb_logo.png", height: "50", class: "app_logo") %>
+
+	<%= link_to 'home', home_path, class: 'nav_links'%>
+	<%= link_to 'become a host', become_a_host_path, class: 'nav_links'%>
+	<%= link_to 'help', help_path, class: 'nav_links'%>
+	<%= link_to 'log in', log_in_path, class: 'nav_links'%>
+	<%= link_to 'sign up', sign_up_path, class: 'nav_links'%>
 </div>
 
 <%= yield %>

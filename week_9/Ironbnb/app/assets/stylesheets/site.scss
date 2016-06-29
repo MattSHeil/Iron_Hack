@@ -1,3 +1,17 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background: grey;	
+}
+
+.app_logo {
+	vertical-align: middle;
+}
+
+.nav_links {
+	float: right;
+	margin-rihgt: 50;
+}
+

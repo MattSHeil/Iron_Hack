@@ -1,0 +1,29 @@
+<h1>Here are you contacts</h1>
+
+<button>
+	<%= link_to("Sort by orlder", controller: "contacts", comand: "older", class: "create_button")%>
+</button>
+<button>
+	<%= link_to("Sort by newer", controller: "contacts", comand: "newer", class: "create_button")%>
+</button>
+<button>
+	<%= link_to("Sort Alphabeticaly", controller: "contacts", comand: "alpha", class: "create_button")%>
+	<!-- html options look it up -->
+</button>
+<button>
+	<%= link_to("Create New Contact", new_path, class: "create_button")%>
+</button>
+
+<%= image_tag('mario.jpg') %>
+
+<ul>
+	<% @contacts.each do | contact | %>
+		<li>
+			<h3><%= "#{contact.name}:" %></h3>
+					<h4><ol><%= "Address: #{contact.address}" %></ol></h4>
+					<h4><ol><%= "Phone: #{contact.phone}" %></ol></h4>
+					<h4><ol><%= "Email: #{contact.email}" %></ol></h4>
+				<br>
+		</li>
+	<% end %>
+</ul>

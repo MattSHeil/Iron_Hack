@@ -11,21 +11,19 @@
     	function onYay() {
         	alert('Yay')
         	yays += 1;
-        	document.getElementById("yay").innerHTML = Yays;
+        	document.getElementById("yay").innerHTML = yays;
     	};
 
     	var nays = 0;
     	function onNay() {
         	alert('Nay')
         	nays += 1;
-        	document.getElementById("nay").innerHTML = Nays;
+        	document.getElementById("nay").innerHTML = nays;
     	};
    	</script>
 
 
 	<h1> <%= @the_question %> </h1>
-
-	<h2> <%= @counter_x %> / <%= @counter_y %> </h2> 
 
 	<h2> <p>Yays: <a id="yay">0</a></p> <p>Nays: <a id="nay">0</a></p> </h2>
 
