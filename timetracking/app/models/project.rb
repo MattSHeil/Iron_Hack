@@ -16,6 +16,12 @@ class Project < ActiveRecord::Base
 
 	has_many :time_entries
 
+	validates :name, uniqueness: true, 
+					 presence: true,   
+					 length: {maximum: 30},
+					 format: {with: /[a-zA-Z0-9]+/}
+
+
 	def self.clean_old
 		where( "creatted_at < ?", 1.week.ago).destroy_all
 
