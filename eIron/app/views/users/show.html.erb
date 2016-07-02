@@ -1,0 +1,11 @@
+<h1>This is <%= @user.name %> profile</h1>
+<h2>contact:
+	<ul>
+		<li>
+			<%= @user.email %>
+		</li>
+	</ul>
+</h2>
+
+<%= link_to 'Check out my products', user_products_path(@user) %>
+
