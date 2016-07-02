@@ -1,0 +1,7 @@
+<h1>What link would you like to shorten it</h1>
+
+<%= form_for @link do | f | %>
+	<%= f.label :original %>
+	<%= f.text_field :original %>
+	<%= f.submit 'Generate' %>
+<% end %>
