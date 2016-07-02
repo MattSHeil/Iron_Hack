@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/contact' => 'site#contact'
 
   resources :projects, only: [:index, :show, :new, :create] do
-  	resources :time_entries, only: [:index, :show, :new]
+  	resources :time_entries, only: [:index, :show, :new, :create]
   end
 
   # get '/pizza' => 'test#pizza'
