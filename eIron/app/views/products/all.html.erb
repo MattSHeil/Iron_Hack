@@ -1,0 +1,13 @@
+<h1>Here are all products being listed atm</h1>
+
+<% @product.each do | sp | %>
+	<ul>
+		<li>
+			<%= sp.name %> by <%= link_to sp.user.name, user_product_path(sp.user.id, sp.id) %>
+		</li>
+	</ul>
+<% end %>
+
+<button>
+	<%= link_to 'Home', home_path %>
+</button>

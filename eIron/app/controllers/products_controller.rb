@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
 	def index
 		@user = User.find(params[:user_id])
+		@product = @user.products.find_by(params[:id])
 		@products = @user.products
 	end
 
@@ -10,11 +11,8 @@ class ProductsController < ApplicationController
 		@product = @user.products.new
 	end
 
-	# def show
-	# end
-
 	def create
-		@user = User.find_by(params[:user_id])
+		@user = User.find(params[:user_id])
 		pruduct_params = params.require(:product).permit(
 			:name, :description, :deadline
 		)
@@ -25,5 +23,14 @@ class ProductsController < ApplicationController
 			render 'new'
 		end
 	end	
+
+	def show
+		@user = User.find(params[:user_id])
+		@product = @user.products.find_by(params[:id])
+	end
+
+	def all
+		@product = Product.all
+	end
 
 end

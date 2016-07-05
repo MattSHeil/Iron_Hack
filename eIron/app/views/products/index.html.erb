@@ -2,11 +2,7 @@
 
 <ul>
 	<% @products.each do | product | %>
-		<li><%= product.name %></li>
-		<ul>
-			<li><%= product.description %></li>
-			<li><%= product.deadline %></li>
-		</ul>
+		<li><%= link_to "#{product.name}", user_product_path(@user, @product)  %></li>
 		<br>
 	<% end%>
 </ul>
@@ -14,3 +10,7 @@
 <button>
 	<%= link_to 'Create New Product', new_user_product_path(@user) %>
 </button>
+
+<button>
+	<%= link_to 'Users Page', user_path(@user) %>
+</button> 

@@ -1,0 +1,4 @@
+<h1><%= @product.name %></h1>
+<h2><%= @product.description %></h2>
+<h2>Autions Ends: <%= @product.deadline %></h2>
+<h3>Created by <%= link_to "#{@user.name}", user_path(@user) %></h3>

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
 	validates :name, 	presence: true
 
-	def self.last_created_users(limit)
+	def self.last_created_user(limit)
 		limit(limit).order(created_at: :desc)
 	end
 
