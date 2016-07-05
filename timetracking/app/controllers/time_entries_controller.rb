@@ -23,4 +23,22 @@ class TimeEntriesController < ApplicationController
   		@time_entry = @project.time_entries.new	
 	end
 
+	def edit
+		@project = Project.find(params[:project_id])
+		@time_entry = @project.time_entries.find(params[:id])
+	end
+
+	def update
+		@project = Project.find(params[:project_id])
+		@time_entry = @project.time_entries.find(params[:id])
+		time_entry_params = params.require(:time_entry).permit(
+			:hours, :minutes, :date
+		)
+		if @time_entry.update(time_entry_params)
+			redirect_to project_time_entries_path(@project)
+		else
+			render 'edit'
+		end
+	end
+
 end

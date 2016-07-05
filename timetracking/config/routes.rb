@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   get '/' => 'site#home'
 
-  get '/contact' => 'site#contact'
+  get '/contact' => 'site#contact' 
 
   resources :projects, only: [:index, :show, :new, :create] do
-  	resources :time_entries, only: [:index, :show, :new, :create]
+  	resources :time_entries, only: [:index, :show, :new, :create, :edit, :update]
   end
+
+  # get 'project/:project_id/time_entries/:id/edit' => 'time_entries#edit'
 
   # get '/pizza' => 'test#pizza'
 

@@ -5,7 +5,8 @@
 	<li>
 		<%= single_entry.hours %> h - 
 		<%= single_entry.minutes %> m -
-		<%= single_entry.date %>		
+		<%= single_entry.date %>	
+		<%= link_to 'Edit', edit_project_time_entry_path(@project, single_entry) %>	
 	</li>
 	<% end %>
 
