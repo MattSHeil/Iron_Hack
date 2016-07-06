@@ -6,7 +6,8 @@
 		<%= single_entry.hours %> h - 
 		<%= single_entry.minutes %> m -
 		<%= single_entry.date %>	
-		<%= link_to 'Edit', edit_project_time_entry_path(@project, single_entry) %>	
+		<%= link_to 'Edit', edit_project_time_entry_path(@project, single_entry) %>
+		<%= link_to 'Delete', project_time_entry_path(@project, single_entry), method: :delete, data: {confirm: 'Are you sure???' } %>
 	</li>
 	<% end %>
 
