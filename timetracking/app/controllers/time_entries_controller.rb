@@ -36,10 +36,11 @@ class TimeEntriesController < ApplicationController
 	end
 
 	def destroy
+		# flash[:success] = "YOU DESTOYED IT FOREVER !!!"
 		@project = Project.find(params[:project_id])
 		@time_entry = @project.time_entries.find(params[:id])	
 		@time_entry.destroy
-		redirect_to project_time_entries_path(@project)
+		redirect_to project_time_entries_path(@project), notice: "YOU DESTOYED IT FOREVER !!!"
 	end
 
 	private 
