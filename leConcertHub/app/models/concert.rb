@@ -16,4 +16,8 @@ class Concert < ActiveRecord::Base
 	def self.the_future
 		Concert.where("date > ?", (Time.new.beginning_of_day))
 	end
+
+	def self.top_10
+		Concert.order(comments_count: :desc)
+	end
 end

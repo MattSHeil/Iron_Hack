@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709181940) do
+ActiveRecord::Schema.define(version: 20160709204036) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "concert_id"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20160709181940) do
     t.datetime "date"
     t.decimal  "price"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "comments_count", default: 0
   end
 
 end

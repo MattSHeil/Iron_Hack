@@ -29,6 +29,10 @@ class ConcertsController < ApplicationController
 		@concert = Concert.where("price <= ?", params[:price].to_f).the_future.order(price: :asc)
 	end
 
+	def popular
+		@concert = Concert.top_10
+	end
+
 	private
 
 	def new_concert_params
