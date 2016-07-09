@@ -1,7 +1,8 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.string :comment
+      t.references :concert, index: true
+      t.text :comment
 
       t.timestamps null: false
     end
