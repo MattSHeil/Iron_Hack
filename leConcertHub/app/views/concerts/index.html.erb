@@ -1,8 +1,19 @@
 <h2>Hello world this is le Concert Hub</h2>
 
-<h3>This are all of the current concerts listed</h3>
-<ul>
+<div class="concerts_month">
+<h2>Concerts This Month</h2>
 	<% @concerts.each do | concert |%>
+		<li><%= concert.artist %></li>
+		<li><%= concert.date %></li>
+		<%= link_to 'More Info', concert_path(concert) %>
+		<br><br>
+	<% end %>
+</div>
+
+<main>
+<h2>This are all of the concerts happening on JOSH'S BDAY OMG !!!</h2>
+<ul>
+	<% @concert_today.each do | concert |%>
 		<li><%= concert.artist %></li>
 		<li><%= concert.city %></li>
 		<li><%= concert.date %></li>
@@ -10,3 +21,4 @@
 		<br><br>
 	<% end %>
 </ul>
+</main>

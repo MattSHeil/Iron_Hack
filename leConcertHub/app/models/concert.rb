@@ -3,4 +3,11 @@ class Concert < ActiveRecord::Base
 	validates 	:artist, :venue, :city, :date, :price, :description,
 				presence: true
 
+	def self.todays_concerts
+		Concert.where(date: [Time.new.beginning_of_day..Time.new.end_of_day]).order(date: :asc)
+	end
+
+	def self.months_concerts
+		Concert.where(date: [(Time.new.beginning_of_day + 1.day)..Time.new.end_of_month]).order(date: :asc)
+	end
 end
