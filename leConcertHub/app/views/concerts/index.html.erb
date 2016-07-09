@@ -1,1 +1,12 @@
 <h2>Hello world this is le Concert Hub</h2>
+
+<h3>This are all of the current concerts listed</h3>
+<ul>
+	<% @concerts.each do | concert |%>
+		<li><%= concert.artist %></li>
+		<li><%= concert.city %></li>
+		<li><%= concert.date %></li>
+		<%= link_to 'More Info', concert_path(concert) %>
+		<br><br>
+	<% end %>
+</ul>
