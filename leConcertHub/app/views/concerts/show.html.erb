@@ -1,4 +1,24 @@
 <h1>Who: <%= @concert.artist %></h1>
 <h2>Where: <%= @concert.city %>, at <%= @concert.venue %></h2>
 <h2>When: <%= @concert.date %></h2>
-<p class="show_descrip"><%= @concert.description %></p>
+<p><%= @concert.description %></p>
+
+<h2>STOP! Comment Time!</h2>
+<ul>
+<% @comments.each do | comment | %>
+	<li><p><%= comment.comment %></p></li>
+<% end %>
+</ul>
+<% if session[:errors] %>
+	<% session[:errors].each do | error | %>
+		<%= error %>
+		<br>
+	<% end %>
+	<% session[:errors] = nil %>
+<% end %>
+
+<%= form_for [@concert, @comment] do | f | %>
+	<%= f.text_area :comment %>
+	<br>
+	<%= f.submit 'SUBMIT'%>
+<% end %>

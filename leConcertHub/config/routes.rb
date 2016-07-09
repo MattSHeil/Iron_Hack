@@ -2,6 +2,10 @@ Rails.application.routes.draw do
  
   get '/' => 'concerts#index', as: :home
 
-  resources :concerts, only: [:create, :new, :show]
+  post '/search' => 'concerts#search', as: :search
+ 
+  resources :concerts, only: [:create, :new, :show] do
+  	resources :comments, only: [:create]
+  end
 
 end

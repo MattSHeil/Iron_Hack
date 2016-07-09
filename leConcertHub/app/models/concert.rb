@@ -12,4 +12,8 @@ class Concert < ActiveRecord::Base
 	def self.months_concerts
 		Concert.where(date: [(Time.new.beginning_of_day + 1.day)..Time.new.end_of_month]).order(date: :asc)
 	end
+
+	def self.the_future
+		Concert.where("date > ?", (Time.new.beginning_of_day))
+	end
 end

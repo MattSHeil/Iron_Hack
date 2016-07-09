@@ -1,0 +1,13 @@
+<ul>
+	<% @concert.each do | sc | %>
+		<li>Artist: <%= sc.artist %></li>
+		<li>Price: <%= sc.price %>$</li>
+		<li><%= link_to 'More Info', concert_path(sc) %></li>
+		<br>
+	<% end %>
+</ul>
+
+<button>
+	<%= link_to 'HOME WE GO!', home_path %>
+</button>
+

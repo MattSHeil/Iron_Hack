@@ -21,6 +21,12 @@ class ConcertsController < ApplicationController
 
 	def show
 		@concert = Concert.find(params[:id])
+		@comments = @concert.comments.all
+		@comment = @concert.comments.new
+	end
+
+	def search
+		@concert = Concert.where("price <= ?", params[:price].to_f).the_future.order(price: :asc)
 	end
 
 	private
