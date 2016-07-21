@@ -27,6 +27,9 @@ class ProductsController < ApplicationController
 	def show
 		@user = User.find(params[:user_id])
 		@product = @user.products.find_by(params[:id])
+		@bid = @user.bids.new
+		@bids = @product.bids.all.last_bids(10)
+		@winner = @bids.first
 	end
 
 	def all

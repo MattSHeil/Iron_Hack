@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/all_products' => 'products#all', as: :all
 
+  post '/products/:id/bids' => 'bid#create', as: :product_bids
+
   resources :users do
 	resources :products
   end

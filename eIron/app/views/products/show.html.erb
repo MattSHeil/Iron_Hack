@@ -2,3 +2,29 @@
 <h2><%= @product.description %></h2>
 <h2>Autions Ends: <%= @product.deadline %></h2>
 <h3>Created by <%= link_to "#{@user.name}", user_path(@user) %></h3>
+
+
+<% if Time.now < @product.deadline %>
+	<ul>
+		<% @bids.each do | bid | %>
+			<li>
+				<%= bid.user.email %> - <%= bid.amount %>			
+			</li>
+		<% end %>
+	</ul>
+
+	<%= form_for [@product, @bid] do | f | %>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<br><br>
+		<%= f.label :amount %>
+		<%= f.number_field :amount %>
+		<br><br>
+		<%= f.submit 'Create' %>
+
+	<% end %>
+<% else %>
+	
+	<h1><%= "#{@winner.user.email}, #{@winner.amount}" %></h1>
+
+<% end %>

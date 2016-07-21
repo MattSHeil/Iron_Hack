@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = User.last_created_users(10)
-		# @user = User.find_by(id: params[:id])
+		@users = User.last_created_user(10)
+		@user = User.find_by(id: params[:id])
 	end
 
 	def new

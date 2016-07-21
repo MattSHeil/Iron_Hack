@@ -1,0 +1,12 @@
+{
+  "name" : "async-and-callbacks",
+  "version" : "1.0.0",
+  "main" : "async-net.js",
+  "scripts" : {
+    "start" : "budo async-net.js"
+  },
+  "dependencies" : {
+    "nets" : "^3.2.0"
+  },
+  "author" : "Adrian Martin"
+}
