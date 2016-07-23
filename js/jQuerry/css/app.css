@@ -1,0 +1,27 @@
+body.unicorn-mode {
+	background-image: url("../unicorn.jpg");
+	background-size: 30% 40%; 
+	background-repeat: no-repeat;
+	background-position: 
+}
+
+img {
+	height: 20%;
+	width: 20%;
+}
+
+p.unicorn-mode {
+	background-color: blue;
+}
+
+h1.unicorn-mode {
+	background-color: yellow;
+}
+
+button.unicorn-mode {
+	background-color: green;
+}
+
+div.unicorn-mode {
+	background-color: purple;
+}
