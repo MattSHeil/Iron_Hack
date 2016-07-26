@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<title>Ajax Exercise</title>
+</head>
+<body>
+
+<div class="container" style="margin-top: 5%;">
+	<button class="btn js-get-characters">
+		Show Characters!		
+	</button>
+
+	<ul class="js-character-ul">
+	</ul>
+</div>
+
+<div class="container" style="margin-top: 5%;">
+	<form>
+		Name:<br>
+		<input class="js-required js-c-name" type="text" name="name" placeholder="Chewbacca"><br>
+		Ocupation:<br>
+		<input class="js-required js-c-occupation" type="text" name="ocupation" placeholder="Badass"><br>
+		Weapon:<br>
+		<input class="js-required js-c-weapon" type="text" name="weapon" placeholder="Bowcaster"><br>
+		Debt:
+		<input class="js-optional" type="radio" name="debt" value="true">Yes
+		<input class="js-optional" type="radio" name="debt" value="false">No<br>
+		<input type="submit" name="submit">
+	</form>
+</div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
