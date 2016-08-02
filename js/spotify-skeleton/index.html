@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>Song Preview Exercise</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<center><form>
+		<h2>What song are you looking for?</h2>
+		<input class="js-search-bar" type="text" name="search-bar" placeholder="Hopefully not Taylor Swift">
+		<input class="js-submit" type="submit" name="search">
+		<button class="seeMoreOptions">See More Results</button>
+	</form></center>
+
+	<div class="widget">
+		<div class="header">
+		<!-- Try adding/removing these classes: -->
+		<!-- disabled -->
+		<!-- playing -->
+		<div class="PLAYBTN btn-play disabled"></div>
+
+		<div class="metadata">
+		  <p class="title title-btn">Hunger of The Pine</p>
+		  <p class="author">alt-J</p>
+
+		  <div class="seekbar">
+		    <progress value="0" max="30"></progress>
+		  </div>
+		</div>
+		</div>
+		<div class="cover">
+			<img class="coverIMG" src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+		</div>
+
+		<audio class="js-song-preview" src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+
+		<div class="modalArtistInfo modal fade js-modal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <div class="modal-header">
+		        <!-- Close button -->
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span>&times;</span>
+		        </button>
+		        <h2 class="modal-artist-name" data-id-matt="something"></h2>
+		      </div>
+
+		      <div class="modal-body">
+		      <button class="modalArtisAlbumsBtn">David Bowie's Albums</button>
+		        <ul class="modal-body-ul">
+		        	
+		        </ul>
+		        <ul class="modal-genre-list">Genres:</ul>
+		        <img class="cover modal-artist-img" src="">
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="modalExtraSongs modal fade js-modal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <div class="modal-header">
+		        <!-- Close button -->
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span>&times;</span>
+		        </button>
+
+		        <h2>You might want one of these:</h2>
+		      </div>
+
+		      <div class="modal-body">
+		        <ul class="modal-song-options">
+		        </ul>
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div class="someArtistAlbumsModal modal fade js-modal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <div class="modal-header">
+		        <!-- Close button -->
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span>&times;</span>
+		        </button>
+
+		        <h2 class="titleAlbumsModal"></h2>
+		      </div>
+
+		      <div class="modal-body">
+		       	<div class="modalAlbumsFromSingleArtist"></div>
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</div>
+
+</body>
+</html>
