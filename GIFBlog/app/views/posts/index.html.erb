@@ -1,0 +1,14 @@
+<h1>Yet again ...</h1>
+
+<ul>
+	<% @posts.each do | post | %>
+		<li>
+			<h2><%= post.title %></h2>
+			<%= image_tag(post.gif_url)%>
+				<br>
+			<button>
+				<%= link_to "Vote for this GIF", post_path(post.id) %>
+			</button>
+		</li>
+	<% end %>
+</ul>
