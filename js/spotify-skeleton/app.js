@@ -115,6 +115,7 @@ $(document).ready(function(){
 	});
 
 	function allTracks(arrayOfSongs){
+		$(".modal-song-options").empty()
 		arrayOfSongs.forEach(function(singleSong){
 			var html = `
 			<li class="song-choices" data-song-id=${singleSong.id}>${singleSong.name}</li>
@@ -157,6 +158,7 @@ $(document).ready(function(){
 	}
 
 	$(".modalArtisAlbumsBtn").on("click", function(){
+		$(".modalAlbumsFromSingleArtist").empty()
 		$(".modalArtistInfo").modal("toggle");
 		$(".someArtistAlbumsModal").modal("toggle");
 		var titleText = $(".modalArtisAlbumsBtn").text();
@@ -181,8 +183,7 @@ $(document).ready(function(){
 		var albumArray = response.items
 		albumArray.forEach(function(singleAlbum){
 			var html = `<ul><li>${singleAlbum.name}</li> 
-						</ul>
-						<ul><li>${singleAlbum.name}</li> 
+						<img class="coverMATT" src=${singleAlbum.images[0].url}>
 						</ul>`
 			$(".modalAlbumsFromSingleArtist").append(html)
 		});
