@@ -1,4 +1,10 @@
 <h1>Title: <%= @post.title %></h1>
 
-<%= image_tag(@post.gif_url) %>
-Votes: <%= @post.votes %>
+<%= image_tag(@post.gif_url) %><br>
+<h3>Votes: <%= @post.votes %></h3>
+<button>
+<%= image_tag("tDown") %>
+</button>
+<button>
+<%= image_tag("tUP") %>
+</button>
