@@ -1,5 +1,16 @@
 <h1>Yet again ...</h1>
 
+<button>
+	<%= link_to("Sort by top", controller: "posts", comand: "top")%>
+</button>
+<button>
+	<%= link_to("Sort by newer", controller: "posts", comand: "newer")%>
+</button>
+<button>
+	<%= link_to("Sort by votes", controller: "posts", comand: "votes")%>
+	<!-- html options look it up -->
+</button>
+
 <ul>
 	<% @posts.each do | post | %>
 		<li>

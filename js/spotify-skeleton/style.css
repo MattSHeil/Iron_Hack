@@ -1,3 +1,7 @@
+#someArtistAlbumsModal {
+  overflow: scroll;
+}
+
 .widget {
   width: 300px;
   margin: 10px auto 0;
@@ -121,7 +125,7 @@
 }
 
 .coverMATT{
-  height: 100px;
+  height: 300px;
   position: relative; 
 }
 

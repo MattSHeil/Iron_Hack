@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Label.create!(name: "funny")
+Label.create!(name: "trending")
+Label.create!(name: "scary")
+Label.create!(name: "nsfw")
+Label.create!(name: "hot")
+Label.create!(name: "troll")
+Label.create!(name: "lol")
+Label.create!(name: "lmao")
+Label.create!(name: "gg")

@@ -1,0 +1,2 @@
+class LabeledPostsController < ApplicationController
+end

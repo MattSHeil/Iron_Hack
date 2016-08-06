@@ -158,9 +158,10 @@ $(document).ready(function(){
 	}
 
 	$(".modalArtisAlbumsBtn").on("click", function(){
-		$(".modalAlbumsFromSingleArtist").empty()
 		$(".modalArtistInfo").modal("toggle");
-		$(".someArtistAlbumsModal").modal("toggle");
+		$(".modalAlbumsFromSingleArtist").empty()
+		$("#someArtistAlbumsModal").modal("toggle");
+		
 		var titleText = $(".modalArtisAlbumsBtn").text();
 		$(".titleAlbumsModal").text(titleText);
 
