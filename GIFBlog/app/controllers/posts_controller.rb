@@ -5,10 +5,9 @@ class PostsController < ApplicationController
 		@posts_newer = Post.sotr_by_date(10)
 		@posts_votes = Post.sotr_by_vote(10)
 
-
 		case params[:comand]
 		when params[:comand] = "top"
-			@posts = @posts_top
+			@posts = Post.low_rated_index(10)
 		when params[:comand] = "newer"
 			@posts = @posts_newer
 		when params[:comand] = "votes"

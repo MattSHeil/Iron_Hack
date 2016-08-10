@@ -5,7 +5,8 @@
 	<%= f.label :gif_url %>
 	<%= f.text_field :gif_url %>
 		<br>
-	<%= %>
+	<%= f.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
+	<!-- check boxes ... -->
 		<br>
 	<%= f.submit "Submit" %>
 <% end %>

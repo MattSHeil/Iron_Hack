@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
 		limit(n).where("votes > ?", 5)
 	end
 
-
 	def voteUp(params)
 		thePost = Post.find(params)
 		thePost.votes += 1 
