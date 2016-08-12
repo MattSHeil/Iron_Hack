@@ -1,19 +1,17 @@
 class PostsController < ApplicationController
 
 	def index
-		@posts_top = Post.low_rated_index(10)
-		@posts_newer = Post.sotr_by_date(10)
-		@posts_votes = Post.sotr_by_vote(10)
 
+		@posts = Post.low_rated_index(10)
 		case params[:comand]
 		when params[:comand] = "top"
 			@posts = Post.low_rated_index(10)
 		when params[:comand] = "newer"
-			@posts = @posts_newer
+			@posts = Post.sotr_by_date(10)
 		when params[:comand] = "votes"
-			@posts = @posts_votes
+			@posts = Post.sotr_by_vote(10)
 		else 
-			@posts = @posts_top
+			@posts = Post.all
 		end
 	end
 
@@ -51,7 +49,7 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(
-			:title, :gif_url
+			:title, :gif_url, label_ids: []
 		)
 	end
 end
