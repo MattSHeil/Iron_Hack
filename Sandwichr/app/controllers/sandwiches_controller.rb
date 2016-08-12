@@ -14,11 +14,18 @@ class SandwichesController < ApplicationController
 
 	def show
 		sandwich = Sandwich.find_by(id: params[:id])
-		ingredients = sandwich.ingredients.all
+		ingredients =
+			if sandwich.ingredients.length != 0
+				sandwich.ingredients.all
+			else 
+				"None"
+			end
+		calories = sandwich.total_calories
+			
 		sandwich_and_ingredients = {
 			"Sandwich" => sandwich,
 			"Ingredients" => ingredients,
-			"Total Calaroties" => sandwich.total_calories
+			"Total Calaroties" => calories
 		}
 		unless sandwich
 			render json: {error: "sandwich dont exist"},
