@@ -17,7 +17,8 @@ class SandwichesController < ApplicationController
 		ingredients = sandwich.ingredients.all
 		sandwich_and_ingredients = {
 			"Sandwich" => sandwich,
-			"Ingredients" => ingredients
+			"Ingredients" => ingredients,
+			"Total Calaroties" => sandwich.total_calories
 		}
 		unless sandwich
 			render json: {error: "sandwich dont exist"},
