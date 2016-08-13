@@ -1,7 +1,7 @@
 <ul>
 	<h1 class="js_sandwich_id" data-sandwich-id=<%= @sandwich.id %>><%= @sandwich.name %></h1>
 	<li><h3>Bread Type: <%= @sandwich.bread_type%></h3></li>
-	<li><h3>Total Calories: <%= @sandwich.total_calories%></h3></li>
+	<li><h3>Total Calories: <span class="js_current_calories"><%= @sandwich.total_calories%></span></h3></li>
 </ul>
 
 <h2>Add Stuff</h2>

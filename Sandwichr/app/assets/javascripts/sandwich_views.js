@@ -30,12 +30,13 @@ $(document).ready(function(){
 		var ingredient = success.Ingredients.pop()
 		// console.log(ingredient)
 		// console.log(something.Ingredients)
-
+		var totalCal = success.Sandwich.total_calories
+		
 		var html = `
 			<li><h3>${ingredient.name} | Calories: ${ingredient.calories}</h3></li>
 		` 
-
 		$(".js_ingredient_list").append(html);
+		$(".js_current_calories").text(totalCal)
 	};
 
 	function addIngredientError(error){
