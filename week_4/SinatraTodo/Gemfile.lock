@@ -29,6 +29,7 @@ GEM
     tilt (2.0.4)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -37,4 +38,4 @@ DEPENDENCIES
   sinatra-contrib
 
 BUNDLED WITH
-   1.12.4
+   1.12.5
