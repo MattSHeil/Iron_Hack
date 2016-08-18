@@ -6,18 +6,22 @@ class SandwichIngredientController < ApplicationController
 		sandwich = Sandwich.find_by(id: params[:id])
 		ingredient = Ingredient.find_by(id: params[:ingredient_id])
 		sandwich.ingredients.push(ingredient)
-		them_ingredients = sandwich.ingredients
 
-		sandwich_and_ingredients = {
-			"Sandwich" => sandwich,
-			"Ingredients" => them_ingredients
-		}
+		# LESS CODE USING JUST THE LAST LINE OF RENDER
+			# them_ingredients = sandwich.ingredients
+			# sandwich_and_ingredients = {
+			# 	"Sandwich" => sandwich,
+			# 	"Ingredients" => them_ingredients
+			# }
 
-		stuffToUpdate = sandwich.total_calories += ingredient.calories
+		# MOVED THIS TO THE MODEL
+			# stuffToUpdate = sandwich.total_calories += ingredient.calories
+			# sandwich.update(total_calories: stuffToUpdate)
 
-		sandwich.update(total_calories: stuffToUpdate)
+		# NO LONGER NEEDED
+			# render json: sandwich_and_ingredients
 
-		render json: sandwich_and_ingredients
+		render json: sandwich.to_json(:include => :ingredients)
 	end
 
 	private
