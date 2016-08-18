@@ -31,6 +31,9 @@ function createTournament (event) {
     if (request.status !== 201) {
       message = 'Your API didn\'t send a 201 status code!'
       $formAlerts.prepend(buildErrorHtml(message))
+      // console.log(request.status)
+      //  // returns 200 status code
+
     }
 
     if (message) {
@@ -42,6 +45,11 @@ function createTournament (event) {
     $form.addClass('hidden')
 
     showTourney(tourney)
+    
+    // var htmlToAdd = `
+    //   <li><a href="tournaments/${tourney.id}">${tourney.name}</a></li>
+    // `
+    // $(".tourney-list").append(htmlToAdd)
   }
 }
 
