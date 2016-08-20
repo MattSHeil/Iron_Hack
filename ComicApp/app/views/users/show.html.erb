@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+	<h3>Welcome <%= @user.name %>!</h3>
+	<%= link_to 'Logout', destroy_user_session_path, method: 'DELETE'%>
+<% else %>
+	<h2>The pricess is in another castle</h2>
+<% end %>
