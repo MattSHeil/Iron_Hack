@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-	resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
+ 	devise_for :users
 
-	scope "/api" do
-	  resources :ingredients, except: [:new, :edit]
-	  resources :sandwiches, except: [:new, :edit]
-	  post "/sandwiches/:id/ingredients/add" => "sandwich_ingredient#add"
-	end
+	root to: 'static_pages#home' 
+	resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
+	scope "/api" do 
+	  	resources :sandwiches
+	    resources :ingredients
+	    post "/sandwiches/:id/ingredients/add" => "sandwiches#add_ingredient"
+	 end
+	 get 'users/:id' => 'users#show', as: :the_user
 
 end

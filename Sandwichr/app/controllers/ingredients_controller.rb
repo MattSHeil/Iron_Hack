@@ -22,6 +22,17 @@ class IngredientsController < ApplicationController
 		render json: ingredient
 	end
 
+	def update
+		ingredient = Ingredient.find_by(id: params[:id])
+		unless ingredient
+			render json: {error: "Ingredient dont exist"},
+			status: 404
+			return
+		end
+		ingredient.update(ingredientsParam)
+		render json: ingredient
+	end
+
 	def destroy
 		ingredient = Ingredient.find_by(id: params[:id])
 		unless ingredient
@@ -36,7 +47,8 @@ class IngredientsController < ApplicationController
 	private
 
 	def ingredientsParam
-		params.require(:ingredients).permit(:name, :calories)
+		params.require(:ingredients)
+			.permit(:name, :calories)
 	end
 
 end

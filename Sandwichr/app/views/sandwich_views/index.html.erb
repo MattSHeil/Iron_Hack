@@ -1,7 +1,5 @@
 <h1>Sup peeps we got some subs going</h1>
 
-<ul>
-	<% @sandwiches.each do | singleSub | %>
-		<li data-sandwich-id=<%= singleSub.id %>> <%= link_to "#{singleSub.name}", sandwich_path(singleSub.id) %> </li>
-	<% end %>
-</ul>
+<% @sandwiches.each do | singleSub | %>
+	<%= link_to(singleSub.name, sandwich_path(singleSub.id)) %> <br>
+<% end %>

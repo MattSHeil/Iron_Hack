@@ -1,45 +1,38 @@
-$(document).ready(function(){
-	$(".js_add_ingredient").on("click", function(event){
-		
-		var sandwichId = $(".js_sandwich_id").data("sandwich-id");
-		var ingredientId = $(event.currentTarget).data("ingredient-id");
-		// console.log(ingredientId)
+$(document).on("ready", function(){
+	$(".ingredient-button").on("click", makeAjaxPost);
+})
 
-		var addParams = {
-			"id": sandwichId,
-			"ingredient_id": ingredientId
-		};
-
-		// console.log(addParams.id)
-
-		doAjax(addParams)
-	});
-
-	function doAjax(params){
-		$.ajax({
-			type: "POST",
-			url: `/api/sandwiches/${params.id}/ingredients/add`,
-			data: params,
-			success: addIngredientSucess,
-			error: addIngredientError 	
-		});
+function makeAjaxPost(event){
+	var sandwichId = $(".my-sandwich").data("sandwich-id");
+	var ingredientId = $(event.target).data("id");
+	var params = {
+		ingredient_id: ingredientId
 	};
 
-	function addIngredientSucess(success){
-		// console.log(success)
-		var ingredient = success.Ingredients.pop()
-		// console.log(ingredient)
-		// console.log(something.Ingredients)
-		var totalCal = success.Sandwich.total_calories
-		
-		var html = `
-			<li><h3>${ingredient.name} | Calories: ${ingredient.calories}</h3></li>
-		` 
-		$(".js_ingredient_list").append(html);
-		$(".js_current_calories").text(totalCal)
-	};
+	$.ajax({
+		type: "POST",
+		url: "/api/sandwiches/" + sandwichId + "/ingredients/add", 
+		data: params, 
+		success: onAddSuccess,
+		error: onAddError
+	})
+}
 
-	function addIngredientError(error){
-		console.log(error)
-	};
-});
+function onAddSuccess(data){
+	$('.ingredient-list').empty();
+	$('.my-sandwich-calories').text(data.total_calories);
+	
+	data.ingredients.forEach(function(ingredient){
+		var fragment = `
+		<li>
+			${ingredient.name}
+			${ingredient.calories}
+		</li>
+		`
+		$('.ingredient-list').append(fragment);
+	})
+}
+
+function onAddError(err){
+	console.log(err);
+}

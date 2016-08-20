@@ -7,6 +7,13 @@ class SandwichesController < ApplicationController
 		render json: sandwiches
 	end
 
+	def add_ingredient
+		sandwich = Sandwich.find_by(id: params[:id])
+		ingredient = Ingredient.find_by(id: params[:ingredient_id])
+		sandwich.ingredients.push(ingredient)
+		render json: sandwich.to_json(:include => :ingredients)
+	end
+
 	def create
 		sandwich = Sandwich.create(sandwichParams)
 		render json: sandwich 
@@ -14,25 +21,12 @@ class SandwichesController < ApplicationController
 
 	def show
 		sandwich = Sandwich.find_by(id: params[:id])
-		ingredients =
-			if sandwich.ingredients.length != 0
-				sandwich.ingredients.all
-			else 
-				"None"
-			end
-		calories = sandwich.total_calories
-			
-		sandwich_and_ingredients = {
-			"Sandwich" => sandwich,
-			"Ingredients" => ingredients,
-			"Total Calaroties" => calories
-		}
 		unless sandwich
 			render json: {error: "sandwich dont exist"},
 				status: 404
 			return
 		end
-		render json: sandwich_and_ingredients
+		render json: sandwich.to_json(:include => :ingredients)
 	end
 
 	def update 
@@ -60,6 +54,7 @@ class SandwichesController < ApplicationController
 	private
 
 	def sandwichParams
-		params.require(:sandwich).permit(:name, :bread_type)
+		params.require(:sandwich)
+			.permit(:name, :bread_type)
 	end
 end
