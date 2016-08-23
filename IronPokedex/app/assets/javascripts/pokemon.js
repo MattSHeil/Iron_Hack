@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 PokemonApp.Pokemon = function(pokemonUri){
-	this.id = PokemonApp.ifFromUri(pokemonUri)
+	this.id = PokemonApp.idFromUri(pokemonUri)
 };
 
 PokemonApp.Pokemon.prototype.render = function(){
@@ -14,22 +14,26 @@ PokemonApp.Pokemon.prototype.render = function(){
 			console.log(response);
 
 			$(".js-pokemon-modal").modal("show")
+			$(".js-pokemon-name").text(response.name)
+			$(".js-pokemon-number").text(response.pkdx_id)
+			$(".js-pokemon-weight").text(response.weight)
+			$(".js-pokemon-height").text(response.height)
 		}
 	});
 };
 
 PokemonApp.idFromUri = function(pokemonUri){
-	var uriSegment = PokemonUri.split("/");
+	var uriSegment = pokemonUri.split("/");
 	var secondLast = uriSegment.length - 2;
 	return uriSegment[secondLast];
 };
 
-$(document).on("ready", function(event){
-	$(".js-show-pokemon").on("click", function(){	
+$(document).on("ready", function(){
+	$(".js-show-pokemon").on("click", function(event){	
 		var $button = $(event.currentTarget);
 		var pokemonUri = $button.data("pokemon-uri")
 
-		var pokemon = new PokemonApp.Pokemon(PokemonUri);
+		var pokemon = new PokemonApp.Pokemon(pokemonUri);
 		pokemon.render();
 	});
 });
