@@ -9,7 +9,7 @@ class BidController < ApplicationController
 		if @bid.save
 			redirect_to user_product_path(@product.user_id, @product.id)
 		# else
-		# 	render 'products/show'
+		# 	flash[:notice] = "Something went wrong ..."
 		end
 	end
 
