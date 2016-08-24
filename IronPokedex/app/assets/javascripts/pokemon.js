@@ -18,6 +18,11 @@ PokemonApp.Pokemon.prototype.render = function(){
 			$(".js-pokemon-number").text(response.pkdx_id)
 			$(".js-pokemon-weight").text(response.weight)
 			$(".js-pokemon-height").text(response.height)
+			$(".js-pokemon-attack").text(response.attack)
+			$(".js-pokemon-defense").text(response.defense)
+			$(".js-pokemon-spattack").text(response.sp_atk)
+			$(".js-pokemon-spdefense").text(response.sp_def)
+			$(".js-pokemon-speed").text(response.speed)
 		}
 	});
 };
